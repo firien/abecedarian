@@ -1,7 +1,6 @@
 fs = require 'fs'
 path = require 'path'
-
-c = require 'coffeescript'
+coffee = require 'coffeescript'
 
 task('build', 'Build application', (options) ->
   pug = require 'pug'
@@ -13,6 +12,22 @@ task('build', 'Build application', (options) ->
     fs.mkdirSync(dirname)
   fs.writeFileSync(filename, html)
   cs = fs.readFileSync("index.coffee", "utf8")
-  js = c.compile cs
+  js = coffee.compile cs
   fs.writeFileSync("docs/index.js", js)
+  # intersection observer
+  fs.copyFileSync(
+    "node_modules/intersection-observer/intersection-observer.js",
+    "docs/intersection-observer.js"
+  )
+)
+
+watch = require 'watch'
+
+task('watch', 'build', (options) ->
+  watch.watchTree(__dirname, interval: 0.3, ->
+    try
+      invoke 'build'
+    catch e
+      console.log e
+  )
 )

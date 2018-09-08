@@ -37,7 +37,8 @@
     "words": [
       "dog",
       "duck",
-      "deer"
+      "deer",
+      "dolphin"
     ],
     "paths": [
       "M 40,20 v 160",
@@ -63,7 +64,8 @@
       "fan",
       "fox",
       "flower",
-      "fish"
+      "fish",
+      "flamingo"
     ],
     "paths": [
       "M 40,20 v 160",
@@ -187,7 +189,8 @@
       "shoes",
       "squirrel",
       "snail",
-      "strawberry"
+      "strawberry",
+      "seal"
     ]
   },
   {
@@ -196,7 +199,8 @@
       "truck",
       "tractor",
       "tree",
-      "tent"
+      "tent",
+      "turtle"
     ],
     "paths": [
       "M 80,20 v 160",

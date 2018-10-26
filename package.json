@@ -3,5 +3,8 @@
     "coffeescript": "^2.3.1",
     "pug": "^2.0.3",
     "watch": "^1.0.2"
+  },
+  "devDependencies": {
+    "svg-path-properties": "^0.4.5"
   }
 }

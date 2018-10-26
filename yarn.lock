@@ -327,6 +327,10 @@ source-map@~0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
+svg-path-properties@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/svg-path-properties/-/svg-path-properties-0.4.5.tgz#269af81cae0d73360d3eb934e8cb8b959bd5e92f"
+
 to-fast-properties@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"

@@ -9,10 +9,10 @@ html(lang="en")
   body
     .y-snap
       each letter in letters
-        .pane(id="letter-"+letter.glyph)
+        .pane(id=`letter-${letter.glyph}`)
           svg(viewBox="0 0 200 200")
             each path in letter.paths.reverse()
-              path(d=path)
+              path(d=path.d, stroke-dasharray=path.length, stroke-dashoffset=path.length, style=path.style)
           div
             .x-snap
               each word in (letter.words || [])

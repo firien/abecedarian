@@ -11,11 +11,12 @@ path {
   stroke-linecap: round;
 }
 path {
-  opacity: 0;
+  stroke: white;
+  animation-name: none;
+  animation-delay: 0;
 }
 div[id^=letter]:target path {
-  opacity: 1;
-  animation-name: trace;
+  animation-name: trace, race;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
@@ -24,6 +25,13 @@ div[id^=letter]:target path {
     stroke-dashoffset: 0;
   }
 }
+
+@keyframes race {
+  10%, 100% {
+    stroke: black;
+  }
+}
+
 svg {
   pointer-events: none;
 }

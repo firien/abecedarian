@@ -14,11 +14,6 @@ task('build', 'Build application', (options) ->
   cs = fs.readFileSync("index.coffee", "utf8")
   js = coffee.compile cs
   fs.writeFileSync("docs/index.js", js)
-  # intersection observer
-  fs.copyFileSync(
-    "node_modules/intersection-observer/intersection-observer.js",
-    "docs/intersection-observer.js"
-  )
 )
 
 watch = require 'watch'

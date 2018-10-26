@@ -4,7 +4,6 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="apple-mobile-web-app-capable" content="yes")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    script(src="intersection-observer.js")
     script(src="index.js")
     link(rel="stylesheet" href="index.css")
   body
@@ -12,7 +11,7 @@ html(lang="en")
       each letter in letters
         .pane(id="letter-"+letter.glyph)
           svg(viewBox="0 0 200 200")
-            each path in (letter.paths || [])
+            each path in letter.paths.reverse()
               path(d=path)
           div
             .x-snap

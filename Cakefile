@@ -6,7 +6,7 @@ task('build', 'Build application', (options) ->
   pug = require 'pug'
   svgPath = require 'svg-path-properties'
   speed = 250
-  letters = JSON.parse(fs.readFileSync('letters.json', 'utf8'));
+  letters = JSON.parse(fs.readFileSync('letters.json', 'utf8'))
   letters.forEach((letter) ->
     delay = 0
     letter.paths = letter.paths.map((path, i) ->

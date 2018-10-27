@@ -2,9 +2,9 @@
   {
     "glyph": "a",
     "words": [
-      "ant",
-      "apple",
-      "avocado"
+      "🐜",
+      "🍎",
+      "🥑"
     ],
     "paths": [
       "M 20,180 l 60 -160 l 60 160",
@@ -14,11 +14,12 @@
   {
     "glyph": "b",
     "words": [
-      "bear",
-      "ball",
-      "bird",
-      "boat",
-      "banana"
+      "🐻",
+      "🏐",
+      "🐦",
+      "⛵️",
+      "🍌",
+      "🐄"
     ],
     "paths": [
       "M 40,20 v 160",
@@ -28,8 +29,8 @@
   {
     "glyph": "c",
     "words": [
-      "cat",
-      "car"
+      "🐈",
+      "🚗"
     ],
     "paths": [
       "M 130, 55.7783 a 60 80 0 1 0 0,88.4434"
@@ -38,10 +39,10 @@
   {
     "glyph": "d",
     "words": [
-      "dog",
-      "duck",
-      "deer",
-      "dolphin"
+      "🐕",
+      "🦆",
+      "🦌",
+      "🐬"
     ],
     "paths": [
       "M 40,20 v 160",
@@ -51,8 +52,8 @@
   {
     "glyph": "e",
     "words": [
-      "elephant",
-      "egg"
+      "🐘",
+      "🥚"
     ],
     "paths": [
       "M 40,20 v 160 h 80",
@@ -63,11 +64,11 @@
   {
     "glyph": "f",
     "words": [
-      "frog",
+      "🐸",
       "fan",
-      "fox",
-      "flower",
-      "fish",
+      "🦊",
+      "🌸",
+      "🐠",
       "flamingo"
     ],
     "paths": [
@@ -79,8 +80,8 @@
   {
     "glyph": "g",
     "words": [
-      "guitar",
-      "ghost"
+      "🎸",
+      "👻"
     ],
     "paths": [
       "M 130, 55.7783 a 60 80 0 1 0 9,58.76669",
@@ -90,8 +91,8 @@
   {
     "glyph": "h",
     "words": [
-      "horse",
-      "house"
+      "🐎",
+      "🏠"
     ],
     "paths": [
       "M 40,20 v 160",
@@ -122,7 +123,7 @@
     "glyph": "k",
     "words": [
       "kite",
-      "key"
+      "🔑"
     ],
     "paths": [
       "M 40,20 v 160",
@@ -134,7 +135,7 @@
     "glyph": "l",
     "words": [
       "llama",
-      "lion",
+      "🦁",
       "lobster"
     ],
     "paths": [
@@ -144,9 +145,9 @@
   {
     "glyph": "m",
     "words": [
-      "monkey",
-      "mouse",
-      "moon",
+      "🐒",
+      "🐁",
+      "🌙",
       "milk"
     ],
     "paths": [
@@ -167,7 +168,7 @@
   {
     "glyph": "o",
     "words": [
-      "octopus"
+      "🐙"
     ],
     "paths": [
       "M 90,20 a 60 80 0 0 0 0 160 a 60 80 0 0 0 0 -160"
@@ -176,8 +177,8 @@
   {
     "glyph": "p",
     "words": [
-      "plane",
-      "pig",
+      "✈️",
+      "🐖",
       "piano"
     ],
     "paths": [
@@ -198,7 +199,7 @@
   {
     "glyph": "r",
     "words": [
-      "rabbit"
+      "🐇"
     ],
     "paths": [
       "M 40,20 v 160",
@@ -209,10 +210,10 @@
   {
     "glyph": "s",
     "words": [
-      "shoes",
+      "👟",
       "squirrel",
-      "snail",
-      "strawberry",
+      "🐌",
+      "🍓",
       "seal"
     ],
     "paths": [
@@ -222,11 +223,11 @@
   {
     "glyph": "t",
     "words": [
-      "truck",
-      "tractor",
-      "tree",
-      "tent",
-      "turtle"
+      "🚚",
+      "🚜",
+      "🌲",
+      "⛺️",
+      "🐢"
     ],
     "paths": [
       "M 80,20 v 160",
@@ -236,7 +237,7 @@
   {
     "glyph": "u",
     "words": [
-      "umbrella"
+      "☂️"
     ],
     "paths": [
       "M 40,20 v 120 a 40 40 0 0 0 80,0 v -120"
@@ -254,7 +255,7 @@
   {
     "glyph": "w",
     "words": [
-      "whale"
+      "🐋"
     ],
     "paths": [
       "M 40,20 v 160 l 40 -80 l 40 80 v -160"
@@ -281,7 +282,7 @@
   {
     "glyph": "z",
     "words": [
-      "zebra"
+      "🦓"
     ],
     "paths": [
       "M 40,20 h 80 l -80 160 h 80"

@@ -3,14 +3,9 @@ html, body {
 }
 path {
   fill: none;
-  stroke: black;
   stroke-width: 1vw;
-/*  stroke-dasharray: 400;*/
-/*  stroke-dashoffset: 400;*/
   stroke-linejoin: round;
   stroke-linecap: round;
-}
-path {
   stroke: white;
   animation-name: none;
   animation-delay: 0;
@@ -27,7 +22,8 @@ div[id^=letter]:target path {
 }
 
 @keyframes race {
-  10%, 100% {
+  40%, 100% {
+    stroke-width: 1.5vw;
     stroke: black;
   }
 }
@@ -70,5 +66,20 @@ svg {
   height: 30vh;
   scroll-snap-align: start;
   text-align: center;
-  font-size: 10vh;
+  font-size: 10vw;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+  }
+  path {
+    stroke: #333;
+  }
+  @keyframes race {
+    40%, 100% {
+      stroke-width: 1.5vw;
+      stroke: #eee;
+    }
+  }
 }

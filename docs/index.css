@@ -56,6 +56,7 @@ svg {
   overflow-y: hidden;
   width: 30vw;
   height: 30vh;
+  line-height: 30vh;
   white-space: nowrap;
 }
 .x-snap > div {
@@ -81,5 +82,24 @@ svg {
       stroke-width: 1.5vw;
       stroke: #eee;
     }
+  }
+}
+
+@media (max-width:500px) {
+  path {
+    stroke-width: 1vh;
+  }
+  .pane {
+    justify-content: center;
+    flex-direction: column;
+  }
+  @keyframes race {
+    40%, 100% {
+      stroke-width: 1.5vh;
+      stroke: black;
+    }
+  }
+  .pane > * {
+    flex: 1 0 auto;
   }
 }

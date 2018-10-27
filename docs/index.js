@@ -1,4 +1,10 @@
 (function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/abecedarian/service.js', {
+      scope: '/abecedarian/'
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var callback, observer;
     if (typeof IntersectionObserver !== "undefined" && IntersectionObserver !== null) {

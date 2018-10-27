@@ -1,10 +1,10 @@
 fs = require 'fs'
 path = require 'path'
 coffee = require 'coffeescript'
-svgPath = require 'svg-path-properties'
 
 task('build', 'Build application', (options) ->
   pug = require 'pug'
+  svgPath = require 'svg-path-properties'
   speed = 250
   letters = JSON.parse(fs.readFileSync('letters.json', 'utf8'));
   letters.forEach((letter) ->
@@ -23,14 +23,16 @@ task('build', 'Build application', (options) ->
     )
   )
   html = pug.renderFile('index.pug', letters: letters, pretty: true)
-  filename = "docs/index.html"
+  filename = 'docs/index.html'
   dirname = path.dirname(filename)
   if not fs.existsSync(dirname)
     fs.mkdirSync(dirname)
   fs.writeFileSync(filename, html)
-  cs = fs.readFileSync("index.coffee", "utf8")
-  js = coffee.compile cs
-  fs.writeFileSync("docs/index.js", js)
+  ['index', 'service'].forEach((filename) ->
+    cs = fs.readFileSync("#{filename}.coffee", 'utf8')
+    js = coffee.compile cs
+    fs.writeFileSync("docs/#{filename}.js", js)
+  )
 )
 
 watch = require 'watch'

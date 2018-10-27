@@ -1,3 +1,6 @@
+if 'serviceWorker' of navigator
+  navigator.serviceWorker.register('/abecedarian/service.js', scope: '/abecedarian/')
+
 document.addEventListener('DOMContentLoaded', ->
   if IntersectionObserver?
     callback = (entries, observer) ->

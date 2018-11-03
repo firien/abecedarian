@@ -1,5 +1,6 @@
-tag = 2
-$cacheName = "ABE-#{tag}"
+tag = 3
+$prefix = 'ABE'
+$cacheName = "#{$prefix}-#{tag}"
 
 $urls = [
   '/abecedarian/index.css'
@@ -15,8 +16,20 @@ self.addEventListener('install', (event) ->
   ))
 )
 
+clearPreviousCaches = ->
+  keys = await caches.keys()
+  Promise.all(keys.filter((key) ->
+    key != $cacheName and key.startsWith($prefix)
+  ).map((key) ->
+    caches.delete(key)
+  ))
+
 self.addEventListener('activate', (event) ->
-  event.waitUntil(self.clients.claim())
+  event.waitUntil( ->
+    clearPreviousCaches().then( ->
+      self.clients.claim()
+    )
+  )
 )
 
 self.addEventListener('fetch', (event) ->

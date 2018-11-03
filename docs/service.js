@@ -1,9 +1,11 @@
 (function() {
-  var $cacheName, $urls, tag;
+  var $cacheName, $prefix, $urls, clearPreviousCaches, tag;
 
-  tag = 2;
+  tag = 3;
 
-  $cacheName = `ABE-${tag}`;
+  $prefix = 'ABE';
+
+  $cacheName = `${$prefix}-${tag}`;
 
   $urls = ['/abecedarian/index.css', '/abecedarian/index.js', '/abecedarian/index.html', '/abecedarian/'];
 
@@ -15,8 +17,22 @@
     }));
   });
 
+  clearPreviousCaches = async function() {
+    var keys;
+    keys = (await caches.keys());
+    return Promise.all(keys.filter(function(key) {
+      return key !== $cacheName && key.startsWith($prefix);
+    }).map(function(key) {
+      return caches.delete(key);
+    }));
+  };
+
   self.addEventListener('activate', function(event) {
-    return event.waitUntil(self.clients.claim());
+    return event.waitUntil(function() {
+      return clearPreviousCaches().then(function() {
+        return self.clients.claim();
+      });
+    });
   });
 
   self.addEventListener('fetch', function(event) {

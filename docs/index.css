@@ -10,7 +10,7 @@ path {
   animation-name: none;
   animation-delay: 0;
 }
-div[id^=letter]:target path {
+body.draw div[id^=letter]:target path {
   animation-name: trace, race;
   animation-timing-function: linear;
   animation-fill-mode: forwards;

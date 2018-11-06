@@ -8,6 +8,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     var callback, observer;
     if (typeof IntersectionObserver !== "undefined" && IntersectionObserver !== null) {
+      document.body.classList.add('draw');
       callback = function(entries, observer) {
         return entries.forEach(function(entry) {
           if (entry.isIntersecting && Math.abs(entry.intersectionRatio) > 0.96) {

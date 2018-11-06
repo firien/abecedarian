@@ -3,6 +3,7 @@ if 'serviceWorker' of navigator
 
 document.addEventListener('DOMContentLoaded', ->
   if IntersectionObserver?
+    document.body.classList.add('draw')
     callback = (entries, observer) ->
       entries.forEach((entry) ->
         if entry.isIntersecting && Math.abs(entry.intersectionRatio) > 0.96

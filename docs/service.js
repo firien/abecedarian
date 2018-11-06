@@ -1,9 +1,9 @@
 (function() {
   var $cacheName, $prefix, $urls, clearPreviousCaches, tag;
 
-  tag = 3;
+  tag = 1;
 
-  $prefix = 'ABE';
+  $prefix = 'ABC';
 
   $cacheName = `${$prefix}-${tag}`;
 
@@ -11,9 +11,7 @@
 
   self.addEventListener('install', function(event) {
     return event.waitUntil(caches.open($cacheName).then(function(cache) {
-      return cache.addAll($urls).then(function() {
-        return self.skipWaiting();
-      });
+      return cache.addAll($urls);
     }));
   });
 
@@ -28,11 +26,7 @@
   };
 
   self.addEventListener('activate', function(event) {
-    return event.waitUntil(function() {
-      return clearPreviousCaches().then(function() {
-        return self.clients.claim();
-      });
-    });
+    return event.waitUntil(clearPreviousCaches);
   });
 
   self.addEventListener('fetch', function(event) {
@@ -43,6 +37,12 @@
     }).then(function(response) {
       return response || fetch(event.request);
     }));
+  });
+
+  self.addEventListener('message', function(event) {
+    if (event.data.action === 'skipWaiting') {
+      return self.skipWaiting();
+    }
   });
 
 }).call(this);

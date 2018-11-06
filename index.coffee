@@ -1,5 +1,19 @@
 if 'serviceWorker' of navigator
-  navigator.serviceWorker.register('/abecedarian/service.js', scope: '/abecedarian/')
+  navigator.serviceWorker.register('/abecedarian/service.js', scope: '/abecedarian/').then((registration) ->
+    refreshPage = (worker) ->
+      if worker.state != 'activated'
+        worker.postMessage(action: 'skipWaiting')
+      window.location.reload()
+    if registration.waiting
+      refreshPage(registration.waiting)
+    registration.addEventListener('updatefound', ->
+      newWorker = registration.installing
+      newWorker.addEventListener('statechange', ->
+        if newWorker.state == 'installed'
+          refreshPage(newWorker)
+      )
+    )
+  )
 
 document.addEventListener('DOMContentLoaded', ->
   if IntersectionObserver?

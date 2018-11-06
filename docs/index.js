@@ -2,6 +2,28 @@
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/abecedarian/service.js', {
       scope: '/abecedarian/'
+    }).then(function(registration) {
+      var refreshPage;
+      refreshPage = function(worker) {
+        if (worker.state !== 'activated') {
+          worker.postMessage({
+            action: 'skipWaiting'
+          });
+        }
+        return window.location.reload();
+      };
+      if (registration.waiting) {
+        refreshPage(registration.waiting);
+      }
+      return registration.addEventListener('updatefound', function() {
+        var newWorker;
+        newWorker = registration.installing;
+        return newWorker.addEventListener('statechange', function() {
+          if (newWorker.state === 'installed') {
+            return refreshPage(newWorker);
+          }
+        });
+      });
     });
   }
 

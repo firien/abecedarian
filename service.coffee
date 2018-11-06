@@ -1,5 +1,5 @@
-tag = 3
-$prefix = 'ABE'
+tag = 1
+$prefix = 'ABC'
 $cacheName = "#{$prefix}-#{tag}"
 
 $urls = [
@@ -8,11 +8,10 @@ $urls = [
   '/abecedarian/index.html'
   '/abecedarian/'
 ]
+
 self.addEventListener('install', (event) ->
   event.waitUntil(caches.open($cacheName).then((cache) ->
-    cache.addAll($urls).then( ->
-      self.skipWaiting()
-    )
+    cache.addAll($urls)
   ))
 )
 
@@ -25,11 +24,7 @@ clearPreviousCaches = ->
   ))
 
 self.addEventListener('activate', (event) ->
-  event.waitUntil( ->
-    clearPreviousCaches().then( ->
-      self.clients.claim()
-    )
-  )
+  event.waitUntil(clearPreviousCaches)
 )
 
 self.addEventListener('fetch', (event) ->
@@ -40,4 +35,9 @@ self.addEventListener('fetch', (event) ->
       response || fetch(event.request)
     )
   )
+)
+
+self.addEventListener('message', (event) ->
+  if event.data.action == 'skipWaiting'
+    self.skipWaiting()
 )

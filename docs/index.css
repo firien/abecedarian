@@ -10,10 +10,18 @@ path {
   animation-name: none;
   animation-delay: 0;
 }
+/* intersection observer*/
 body.draw div[id^=letter]:target path {
   animation-name: trace, race;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+}
+/* non intersection observer*/
+body:not(.draw) div[id^=letter] path {
+  stroke: black;
+  stroke-width: 1.5vw;
+  stroke-dasharray: none !important;
+  stroke-dashoffset: 0 !important;
 }
 @keyframes trace {
   to {

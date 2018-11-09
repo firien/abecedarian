@@ -1,7 +1,7 @@
 (function() {
   var $cacheName, $prefix, $urls, clearPreviousCaches, tag;
 
-  tag = 1;
+  tag = 2;
 
   $prefix = 'ABC';
 

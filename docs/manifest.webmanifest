@@ -1,0 +1,20 @@
+{
+  "name": " The Abecedarian",
+  "short_name": "ABC",
+  "start_url": "/abecedarian/",
+  "display": "standalone",
+  "background_color": "orange",
+  "description": "Learn the alphabet",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes: "192x192",
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes: "512x512",
+    }
+  ]
+}

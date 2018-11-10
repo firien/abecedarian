@@ -1,8 +1,10 @@
-tag = 2
+tag = 3
 $prefix = 'ABC'
 $cacheName = "#{$prefix}-#{tag}"
 
 $urls = [
+  '/abecedarian/icon-192.png'
+  '/abecedarian/icon-512.png'
   '/abecedarian/touch-icon-ipad.png'
   '/abecedarian/touch-icon-ipad-retina.png'
   '/abecedarian/touch-icon-iphone-retina.png'

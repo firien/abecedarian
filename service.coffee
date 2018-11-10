@@ -3,6 +3,9 @@ $prefix = 'ABC'
 $cacheName = "#{$prefix}-#{tag}"
 
 $urls = [
+  '/abecedarian/touch-icon-ipad.png'
+  '/abecedarian/touch-icon-ipad-retina.png'
+  '/abecedarian/touch-icon-iphone-retina.png'
   '/abecedarian/index.css'
   '/abecedarian/index.js'
   '/abecedarian/index.html'

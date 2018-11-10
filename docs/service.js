@@ -7,7 +7,7 @@
 
   $cacheName = `${$prefix}-${tag}`;
 
-  $urls = ['/abecedarian/index.css', '/abecedarian/index.js', '/abecedarian/index.html', '/abecedarian/'];
+  $urls = ['/abecedarian/touch-icon-ipad.png', '/abecedarian/touch-icon-ipad-retina.png', '/abecedarian/touch-icon-iphone-retina.png', '/abecedarian/index.css', '/abecedarian/index.js', '/abecedarian/index.html', '/abecedarian/'];
 
   self.addEventListener('install', function(event) {
     return event.waitUntil(caches.open($cacheName).then(function(cache) {

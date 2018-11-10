@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height='250' viewBox='0 0 250 250' width='250' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+    <![CDATA[
+    .scene {
+      margin: 50px;
+      width: 150px;
+      height: 150px;
+      perspective: 1000px; }
+  
+    .cube {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(-25deg) rotateY(50deg); }
+  
+    .cube > .face {
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      line-height: 120px;
+      font-size: 120px;
+      text-align: center;
+      border-radius: 3px;
+      box-sizing: border-box;
+      font-family: -apple-system, 'Helvetica Neue', 'Arial', 'Tahoma';
+      background-color: ivory;
+      font-weight: 700; }
+  
+    .left {
+      transform: rotateY(-90deg) translate3d(0, 0, 75px);
+      border: blue solid 15px;
+      color: blue;
+      border-top-right-radius: 0 !important; }
+  
+    .front {
+      transform: translate3d(0, 0, 75px);
+      border: green solid 15px;
+      color: green;
+      border-top-left-radius: 0 !important; }
+  
+    .top {
+      transform: rotateX(90deg) translate3d(0, 0, 75px);
+      border: red solid 15px;
+      color: red;
+      border-bottom-right-radius: 0 !important; }
+    ]]>
+  </style>
+  <!-- relies on foreign object because we need css 3d transforms -->
+  <foreignObject height='250' width='250' x='0' y='0'>
+    <div class="scene"  xmlns="http://www.w3.org/1999/xhtml">
+      <div class="cube">
+        <div class="face left">A</div>
+        <div class="face front">B</div>
+        <div class="face top">C</div>
+     </div>
+    </div>
+  </foreignObject>
+
+</svg>

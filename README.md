@@ -1,6 +1,6 @@
 # The Abecedarian
 
-A web app to help children learn the alphabet. Specifically designed for iPad, but should work everywhere. For iPad, it is best to pin it to the homescreen, the horizontal swiping tends to trigger Safari Forward/Back navigation - when launched as a fullscreen app this goes away.
+A web app to help children learn the alphabet. Specifically designed for iPad, but should work everywhere. For iPad, it is best to pin it to the homescreen, the horizontal swiping tends to trigger Safari Forward/Back navigation - when launched as a fullscreen app this quirk goes away.
 
 It works without javascript, but with IntersectionObserver the letters will be drawn as they are intended to be handwritten.
 

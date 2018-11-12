@@ -1,4 +1,4 @@
-tag = 5
+tag = 6
 $prefix = 'ABC'
 $cacheName = "#{$prefix}-#{tag}"
 

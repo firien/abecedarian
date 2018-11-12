@@ -15,6 +15,13 @@ if 'serviceWorker' of navigator
     )
   )
 
+window.addEventListener('beforeinstallprompt', (e) ->
+  # necessary?
+  e.preventDefault()
+  # Show the prompt
+  e.prompt()
+)
+
 document.addEventListener('DOMContentLoaded', ->
   if IntersectionObserver?
     document.body.classList.add('draw')

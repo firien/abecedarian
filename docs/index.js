@@ -27,6 +27,13 @@
     });
   }
 
+  window.addEventListener('beforeinstallprompt', function(e) {
+    // necessary?
+    e.preventDefault();
+    // Show the prompt
+    return e.prompt();
+  });
+
   document.addEventListener('DOMContentLoaded', function() {
     var callback, observer;
     if (typeof IntersectionObserver !== "undefined" && IntersectionObserver !== null) {

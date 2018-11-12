@@ -5,6 +5,7 @@
   "display": "standalone",
   "background_color": "orange",
   "description": "Learn the alphabet",
+  "theme_color": "ivory",
   "icons": [
     {
       "src": "icon-192.png",

@@ -3,19 +3,19 @@
   "short_name": "ABC",
   "start_url": "/abecedarian/",
   "display": "standalone",
-  "background_color": "orange",
+  "background_color": "ivory",
   "description": "Learn the alphabet",
   "theme_color": "ivory",
   "icons": [
     {
       "src": "icon-192.png",
       "type": "image/png",
-      "sizes: "192x192",
+      "sizes: "192x192"
     },
     {
       "src": "icon-512.png",
       "type": "image/png",
-      "sizes: "512x512",
+      "sizes: "512x512"
     }
   ]
 }

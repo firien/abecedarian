@@ -18,8 +18,17 @@ if 'serviceWorker' of navigator
 window.addEventListener('beforeinstallprompt', (e) ->
   # necessary?
   e.preventDefault()
-  # Show the prompt
-  e.prompt()
+  deferredInstall = e
+  button = document.createElement('button')
+  button.setAttribute('id', 'installer')
+  button.addEventListener('click', ->
+    deferredInstall.prompt()
+    deferredInstall.userChoice.finally( ->
+      deferredInstall = null
+      document.body.removeChild(button)
+    )
+  )
+  document.body.appendChild(button)
 )
 
 document.addEventListener('DOMContentLoaded', ->

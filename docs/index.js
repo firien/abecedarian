@@ -28,10 +28,20 @@
   }
 
   window.addEventListener('beforeinstallprompt', function(e) {
+    var button, deferredInstall;
     // necessary?
     e.preventDefault();
-    // Show the prompt
-    return e.prompt();
+    deferredInstall = e;
+    button = document.createElement('button');
+    button.setAttribute('id', 'installer');
+    button.addEventListener('click', function() {
+      deferredInstall.prompt();
+      return deferredInstall.userChoice.finally(function() {
+        deferredInstall = null;
+        return document.body.removeChild(button);
+      });
+    });
+    return document.body.appendChild(button);
   });
 
   document.addEventListener('DOMContentLoaded', function() {

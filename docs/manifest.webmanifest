@@ -3,9 +3,9 @@
   "short_name": "ABC",
   "start_url": "/abecedarian/",
   "display": "standalone",
-  "background_color": "ivory",
+  "background_color": "#fffff0",
   "description": "Learn the alphabet",
-  "theme_color": "ivory",
+  "theme_color": "#fffff0",
   "icons": [
     {
       "src": "icon-192.png",

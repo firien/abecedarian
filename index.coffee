@@ -21,6 +21,7 @@ window.addEventListener('beforeinstallprompt', (e) ->
   deferredInstall = e
   button = document.createElement('button')
   button.setAttribute('id', 'installer')
+  button.textContent = 'Install'
   button.addEventListener('click', ->
     deferredInstall.prompt()
     deferredInstall.userChoice.finally( ->

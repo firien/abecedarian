@@ -34,6 +34,7 @@
     deferredInstall = e;
     button = document.createElement('button');
     button.setAttribute('id', 'installer');
+    button.textContent = 'Install';
     button.addEventListener('click', function() {
       deferredInstall.prompt();
       return deferredInstall.userChoice.finally(function() {

@@ -35,20 +35,15 @@ task('build', 'Build application', (options) ->
   )
 )
 
-watch = require 'watch'
-
-task('watch', 'build', (options) ->
+task('serve', 'serve', (options) ->
+  watch = require 'watch'
   watch.watchTree(__dirname, interval: 0.3, ->
     try
       invoke 'build'
     catch e
       console.log e
   )
-)
 
-task('serve', 'serve', (options) ->
-  exec = require('child_process').exec
-  watcher = exec 'yarn run cake watch'
   http = require 'http'
   url = require 'url'
   http.createServer((request, response) ->
@@ -76,9 +71,4 @@ task('serve', 'serve', (options) ->
       response.end()
       return
   ).listen(4000)
-  onExit = ->
-    watcher.kill()
-    process.exit()
-  process.on('SIGINT', onExit)
-  process.on('exit', onExit)
 )

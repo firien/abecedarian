@@ -45,3 +45,40 @@ task('watch', 'build', (options) ->
       console.log e
   )
 )
+
+task('serve', 'serve', (options) ->
+  exec = require('child_process').exec
+  watcher = exec 'yarn run cake watch'
+  http = require 'http'
+  url = require 'url'
+  http.createServer((request, response) ->
+    uri = url.parse(request.url).pathname
+    filename = path.join(process.cwd(), 'docs', uri)
+
+    if fs.existsSync(filename)
+      if fs.statSync(filename).isDirectory()
+        filename += '/index.html'
+
+      fs.readFile(filename, "binary", (err, file) ->
+        if err
+          response.writeHead(500, "Content-Type": "text/plain")
+          response.write(err + "\n")
+          response.end()
+          return
+
+        response.writeHead(200)
+        response.write(file, "binary")
+        response.end()
+      )
+    else
+      response.writeHead(404, "Content-Type": "text/plain")
+      response.write("404 Not Found\n")
+      response.end()
+      return
+  ).listen(4000)
+  onExit = ->
+    watcher.kill()
+    process.exit()
+  process.on('SIGINT', onExit)
+  process.on('exit', onExit)
+)

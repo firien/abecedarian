@@ -10,8 +10,8 @@ Also relies heavily on [CSS Scroll Snap](https://www.w3.org/TR/css-scroll-snap-1
 
 ## Development notes
 
-To build /docs folder
+To build /docs/index.html file
 
-> yarn run cake build
+> node --experimental-modules ./build.js
 
 Images rely on emoji glyphs, which vary from system to system. I would like to create my own images someday.

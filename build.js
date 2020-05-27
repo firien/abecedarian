@@ -8,7 +8,7 @@ const letters = JSON.parse(fs.readFileSync('letters.json', 'utf8'));
 letters.forEach(function(letter) {
   let delay = 0;
   return letter.paths = letter.paths.map(function(path, i) {
-    let path = { d: path };
+    path = { d: path };
     let p = svgPath.svgPathProperties(path.d);
     path.length = p.getTotalLength();
     let time = path.length / speed;

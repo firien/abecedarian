@@ -3,7 +3,7 @@
   "type": "module",
   "dependencies": {
     "mime": "^2.3.1",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "watch": "^1.0.2"
   },
   "devDependencies": {

@@ -3,8 +3,8 @@
   "type": "module",
   "dependencies": {
     "mime": "^2.3.1",
-    "pug": "^2.0.3",
-    "watch": "^1.0.2"
+    "pug": "^3.0.2",
+    "watch": "^0.13.0"
   },
   "devDependencies": {
     "svg-path-properties": "^0.4.5"

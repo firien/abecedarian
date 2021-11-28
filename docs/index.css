@@ -1,12 +1,23 @@
 html, body {
   margin: 0;
 }
+:root {
+  --stroke-path: hsl(0, 0%, 20%);
+  --background-color: hsl(60, 56%, 97%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --stroke-path: hsl(60, 56%, 97%);
+    --background-color: hsl(0, 0%, 20%);
+  }
+}
+
 path {
   fill: none;
   stroke-width: 1vw;
   stroke-linejoin: round;
   stroke-linecap: round;
-  stroke: beige;
+  stroke: var(--stroke-path);
   animation-name: none;
   animation-delay: 0;
 }
@@ -18,7 +29,7 @@ body.draw div[id^=letter]:target path {
 }
 /* non intersection observer*/
 body:not(.draw) div[id^=letter] path {
-  stroke: black;
+  stroke: var(--stroke-path);
   stroke-width: 1.5vw;
   stroke-dasharray: none !important;
   stroke-dashoffset: 0 !important;
@@ -32,7 +43,6 @@ body:not(.draw) div[id^=letter] path {
 @keyframes race {
   40%, 100% {
     stroke-width: 1.5vw;
-    stroke: black;
   }
 }
 
@@ -46,7 +56,7 @@ svg {
   overflow-x: hidden;
   height: 100vh;
   width: 100vw;
-  background-color: beige;
+  background-color: var(--background-color);
 }
 .pane {
   display: flex;
@@ -80,21 +90,6 @@ svg {
   font-size: 10vw;
 }
 
-@media (prefers-color-scheme: dark) {
-  .y-snap {
-    background-color: #333;
-  }
-  path {
-    stroke: #333;
-  }
-  @keyframes race {
-    40%, 100% {
-      stroke-width: 1.5vw;
-      stroke: #eee;
-    }
-  }
-}
-
 @media (max-width:500px) {
   path {
     stroke-width: 1vh;
@@ -106,7 +101,6 @@ svg {
   @keyframes race {
     40%, 100% {
       stroke-width: 1.5vh;
-      stroke: black;
     }
   }
   .pane > * {

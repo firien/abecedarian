@@ -12,12 +12,14 @@ html(lang="en")
     link(rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png")
     link(rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png")
     script(src="index.js")
-    link(rel="manifest", href="manifest.webmanifest")
+    link(rel="manifest" href="manifest.webmanifest")
     link(rel="stylesheet" href="index.css")
+    meta(name="theme-color" content="hsl(60, 56%, 97%)" media="(prefers-color-scheme: light)")
+    meta(name="theme-color" content="hsl(0, 0%, 20%)" media="(prefers-color-scheme: dark)")
     noscript
       style.
         div[id^=letter] path {
-          stroke: black;
+          stroke: var(--stroke-path);
           stroke-width: 1.5vw;
           stroke-dasharray: none !important;
           stroke-dashoffset: 0 !important;
